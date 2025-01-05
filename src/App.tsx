@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import Form from './components/Form';
 import './App.css';
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div>
       <header>
@@ -9,7 +12,14 @@ function App() {
       </header>
 
       <main>
-        <Form />
+        {
+          showForm ? <Form setShowForm={ setShowForm } />
+            : (
+              <button onClick={ () => setShowForm(true) }>
+                Cadastrar nova senha
+              </button>
+            )
+        }
       </main>
     </div>
   );

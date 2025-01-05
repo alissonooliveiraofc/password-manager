@@ -1,4 +1,8 @@
-function Form() {
+type FormProps = {
+  setShowForm: (boolean : boolean) => void;
+};
+
+function Form({ setShowForm }: FormProps) {
   return (
     <form>
       <label htmlFor="service">Nome do serviço</label>
@@ -14,7 +18,7 @@ function Form() {
       <input type="text" name="url" id="url" />
 
       <button>Cadastrar</button>
-      <button>Cancelar</button>
+      <button onClick={ () => setShowForm(false) }>Cancelar</button>
     </form>
   );
 }
