@@ -3,7 +3,9 @@ import './App.css';
 function App() {
   return (
     <div>
-      Hello World
+      <header>
+        <h1>Gerenciador de senhas</h1>
+      </header>
     </div>
   );
 }
