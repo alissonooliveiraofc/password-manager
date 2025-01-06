@@ -1,9 +1,10 @@
 type FormProps = {
   setShowForm: (boolean : boolean) => void;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  isButtonEnabled: boolean;
 };
 
-function Form({ setShowForm, handleChange }: FormProps) {
+function Form({ setShowForm, handleChange, isButtonEnabled }: FormProps) {
   return (
     <form>
       <label htmlFor="service">Nome do serviço</label>
@@ -41,7 +42,7 @@ function Form({ setShowForm, handleChange }: FormProps) {
         onChange={ (event) => handleChange(event) }
       />
 
-      <button disabled>Cadastrar</button>
+      <button id="submit" disabled={ !isButtonEnabled }>Cadastrar</button>
       <button onClick={ () => setShowForm(false) }>Cancelar</button>
     </form>
   );
