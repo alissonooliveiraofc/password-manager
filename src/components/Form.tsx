@@ -2,6 +2,7 @@ type FormProps = {
   setShowForm: (boolean : boolean) => void;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isButtonEnabled: boolean;
+
 };
 
 function Form({ setShowForm, handleChange, isButtonEnabled }: FormProps) {
