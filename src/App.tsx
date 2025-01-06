@@ -2,13 +2,21 @@ import { useState } from 'react';
 import Form from './components/Form';
 import './App.css';
 
-function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-  const { name, value } = event.target;
-  console.log(name, value);
-}
-
 function App() {
+  const form = {
+    service: '',
+    login: '',
+    password: '',
+    url: '',
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState(form);
 
   return (
     <div>
