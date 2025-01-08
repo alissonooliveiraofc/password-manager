@@ -8,13 +8,6 @@ type FormProps = {
     hasLettersAndNumbers: boolean,
     hasSpecialChar: boolean
   };
-
-  setError:(value: React.SetStateAction<{
-    hasMinLength: boolean;
-    hasMaxLength: boolean;
-    hasLettersAndNumbers: boolean;
-    hasSpecialChar: boolean;
-  }>) => void
 };
 
 const VALID_PASSWORD_CHECK = 'valid-password-check';
@@ -25,7 +18,6 @@ function Form({
   handleChange,
   isButtonEnabled,
   error,
-  setError,
 }: FormProps) {
   return (
     <form>

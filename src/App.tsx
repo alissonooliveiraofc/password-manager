@@ -77,7 +77,7 @@ function App() {
             handleChange={ handleChange }
             isButtonEnabled={ isButtonEnabled }
             error={ error }
-            setError={ setError }
+
           />
             : (
               <button onClick={ () => setShowForm(true) }>
