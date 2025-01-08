@@ -2,10 +2,31 @@ type FormProps = {
   setShowForm: (boolean : boolean) => void;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isButtonEnabled: boolean;
+  error: {
+    hasMinLength: boolean,
+    hasMaxLength: boolean,
+    hasLettersAndNumbers: boolean,
+    hasSpecialChar: boolean
+  };
 
+  setError:(value: React.SetStateAction<{
+    hasMinLength: boolean;
+    hasMaxLength: boolean;
+    hasLettersAndNumbers: boolean;
+    hasSpecialChar: boolean;
+  }>) => void
 };
 
-function Form({ setShowForm, handleChange, isButtonEnabled }: FormProps) {
+const VALID_PASSWORD_CHECK = 'valid-password-check';
+const INVALID_PASSWORD_CHECK = 'invalid-password-check';
+
+function Form({
+  setShowForm,
+  handleChange,
+  isButtonEnabled,
+  error,
+  setError,
+}: FormProps) {
   return (
     <form>
       <label htmlFor="service">Nome do serviço</label>
@@ -34,7 +55,36 @@ function Form({ setShowForm, handleChange, isButtonEnabled }: FormProps) {
         id="password"
         onChange={ (event) => handleChange(event) }
       />
-
+      <ul>
+        <li
+          className={ error.hasMinLength
+            ? VALID_PASSWORD_CHECK
+            : INVALID_PASSWORD_CHECK }
+        >
+          Possuir 8 ou mais caracteres
+        </li>
+        <li
+          className={ error.hasMaxLength
+            ? VALID_PASSWORD_CHECK
+            : INVALID_PASSWORD_CHECK }
+        >
+          Possuir até 16 caracteres
+        </li>
+        <li
+          className={ error.hasLettersAndNumbers
+            ? VALID_PASSWORD_CHECK
+            : INVALID_PASSWORD_CHECK }
+        >
+          Possuir letras e números
+        </li>
+        <li
+          className={ error.hasSpecialChar
+            ? VALID_PASSWORD_CHECK
+            : INVALID_PASSWORD_CHECK }
+        >
+          Possuir algum caractere especial
+        </li>
+      </ul>
       <label htmlFor="url">URL</label>
       <input
         type="text"

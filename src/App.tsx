@@ -14,6 +14,20 @@ function App() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
     verifyForm();
+
+    if (name === 'password') {
+      const hasMinLength = value.length >= 8;
+      const hasMaxLength = value.length <= 16;
+      const hasLettersAndNumbers = /[a-zA-Z]/.test(value) && /\d/.test(value);
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+
+      setError({
+        hasMinLength,
+        hasMaxLength,
+        hasLettersAndNumbers,
+        hasSpecialChar,
+      });
+    }
   };
 
   const verifyForm = () => {
@@ -35,12 +49,20 @@ function App() {
     ) {
       return setIsButtonEnabled(true);
     }
-    return setIsButtonEnabled(false);
+    return (
+      setIsButtonEnabled(false)
+
+    );
   };
 
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState(form);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [error, setError] = useState({
+    hasMinLength: false,
+    hasMaxLength: true,
+    hasLettersAndNumbers: false,
+    hasSpecialChar: false });
 
   return (
     <div>
@@ -54,7 +76,8 @@ function App() {
             setShowForm={ setShowForm }
             handleChange={ handleChange }
             isButtonEnabled={ isButtonEnabled }
-
+            error={ error }
+            setError={ setError }
           />
             : (
               <button onClick={ () => setShowForm(true) }>
