@@ -8,6 +8,7 @@ type FormProps = {
     hasLettersAndNumbers: boolean,
     hasSpecialChar: boolean
   };
+  handleRegister: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 const VALID_PASSWORD_CHECK = 'valid-password-check';
@@ -18,6 +19,7 @@ function Form({
   handleChange,
   isButtonEnabled,
   error,
+  handleRegister,
 }: FormProps) {
   return (
     <form>
@@ -85,7 +87,17 @@ function Form({
         onChange={ (event) => handleChange(event) }
       />
 
-      <button id="submit" disabled={ !isButtonEnabled }>Cadastrar</button>
+      <button
+        id="submit"
+        disabled={ !isButtonEnabled }
+        type="submit"
+        onClick={ (event) => {
+          event.preventDefault();
+          handleRegister(event);
+        } }
+      >
+        Cadastrar
+      </button>
       <button onClick={ () => setShowForm(false) }>Cancelar</button>
     </form>
   );

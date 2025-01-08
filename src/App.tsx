@@ -30,6 +30,14 @@ function App() {
     }
   };
 
+  const handleRegister = () => {
+    setPasswords([...passwords, formData]);
+
+    setFormData({ service: '', login: '', password: '', url: '' });
+
+    setShowForm(false);
+  };
+
   const verifyForm = () => {
     const { service, login, password } = formData;
 
@@ -64,7 +72,7 @@ function App() {
     hasLettersAndNumbers: false,
     hasSpecialChar: false });
 
-  const [passwords, setPasswords] = useState([]);
+  const [passwords, setPasswords] = useState([form]);
   return (
     <div>
       <header>
@@ -78,6 +86,7 @@ function App() {
             handleChange={ handleChange }
             isButtonEnabled={ isButtonEnabled }
             error={ error }
+            handleRegister={ handleRegister }
 
           />
             : (
@@ -90,6 +99,27 @@ function App() {
 
       <section>
         <h2>Senhas cadastradas</h2>
+        {passwords[0].password.length === 0 ? (
+          <p>Nenhuma senha cadastrada</p>
+        ) : (
+          <ul>
+            {passwords.map((password, index) => (
+              <li key={ index }>
+                <a href={ password.url } target="_blank" rel="noopener noreferrer">
+                  {password.password}
+                </a>
+                <p>
+                  Login:
+                  {password.login}
+                </p>
+                <p>
+                  Senha:
+                  {password.password}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </div>
   );
