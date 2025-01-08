@@ -99,24 +99,26 @@ function App() {
 
       <section>
         <h2>Senhas cadastradas</h2>
-        {passwords[0].password.length === 0 ? (
+        {passwords.length === 0 ? (
           <p>Nenhuma senha cadastrada</p>
         ) : (
           <ul>
             {passwords.map((password, index) => (
-              <li key={ index }>
-                <a href={ password.url } target="_blank" rel="noopener noreferrer">
-                  {password.password}
-                </a>
-                <p>
-                  Login:
-                  {password.login}
-                </p>
-                <p>
-                  Senha:
-                  {password.password}
-                </p>
-              </li>
+              password.service && password.login && password.password && password.url && (
+                <li key={ index }>
+                  <a href={ password.url } target="_blank" rel="noopener noreferrer">
+                    {password.service}
+                  </a>
+                  <p>
+                    Login:
+                    {password.login}
+                  </p>
+                  <p>
+                    Senha:
+                    {password.password}
+                  </p>
+                </li>
+              )
             ))}
           </ul>
         )}
