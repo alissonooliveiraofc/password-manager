@@ -64,6 +64,7 @@ function App() {
     hasLettersAndNumbers: false,
     hasSpecialChar: false });
 
+  const [passwords, setPasswords] = useState([]);
   return (
     <div>
       <header>
@@ -86,6 +87,10 @@ function App() {
             )
         }
       </main>
+
+      <section>
+        <h2>Senhas cadastradas</h2>
+      </section>
     </div>
   );
 }
