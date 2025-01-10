@@ -72,7 +72,7 @@ function App() {
     hasLettersAndNumbers: false,
     hasSpecialChar: false });
 
-  const [passwords, setPasswords] = useState([form]);
+  const [passwords, setPasswords] = useState<typeof form[]>([]);
   return (
     <div>
       <header>
