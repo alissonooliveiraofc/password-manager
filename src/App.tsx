@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 import Form from './components/Form';
 import './App.css';
 
@@ -36,6 +37,13 @@ function App() {
     setFormData({ service: '', login: '', password: '', url: '' });
 
     setShowForm(false);
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Serviço cadastrado com sucesso',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   const verifyForm = () => {
@@ -105,44 +113,47 @@ function App() {
 
       <section>
         <h2>Senhas cadastradas</h2>
-        <div>
-          <label>
-            <input
-              type="checkbox"
-              checked={ hidePasswords }
-              onChange={ (event) => setHidePasswords(event.target.checked) }
-            />
-            Esconder senhas
-          </label>
-        </div>
         {passwords.length === 0 ? (
           <p>Nenhuma senha cadastrada</p>
         ) : (
-          <ul>
-            {passwords.map((password, index) => (
-              password.service && password.login && password.password && password.url && (
-                <li key={ index }>
-                  <a href={ `http://${password.url}` } target="_blank" rel="noopener noreferrer">
-                    {password.service}
-                  </a>
-                  <p>
-                    Login:
-                    {password.login}
-                  </p>
-                  <p>
-                    Senha:
-                    {hidePasswords ? '******' : password.password}
-                  </p>
-                  <button
-                    data-testid="remove-btn"
-                    onClick={ () => removePassword(index) }
-                  >
-                    Apagar senha
-                  </button>
-                </li>
-              )
-            ))}
-          </ul>
+          <>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={ hidePasswords }
+                  onChange={ (event) => setHidePasswords(event.target.checked) }
+                />
+                Esconder senhas
+              </label>
+            </div>
+            <ul>
+              {passwords.map((password, index) => (
+                password.service
+                && password.login && password.password && password.url && (
+                  <li key={ index }>
+                    <a href={ `http://${password.url}` } target="_blank" rel="noopener noreferrer">
+                      {password.service}
+                    </a>
+                    <p>
+                      Login:
+                      {password.login}
+                    </p>
+                    <p>
+                      Senha:
+                      {hidePasswords ? '******' : password.password}
+                    </p>
+                    <button
+                      data-testid="remove-btn"
+                      onClick={ () => removePassword(index) }
+                    >
+                      Apagar senha
+                    </button>
+                  </li>
+                )
+              ))}
+            </ul>
+          </>
         )}
       </section>
     </div>
