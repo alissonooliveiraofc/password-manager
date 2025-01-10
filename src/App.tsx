@@ -73,6 +73,11 @@ function App() {
     hasSpecialChar: false });
 
   const [passwords, setPasswords] = useState<typeof form[]>([]);
+
+  function removePassword(index: number) {
+    const newPasswords = passwords.filter((_, i) => i !== index);
+    setPasswords(newPasswords);
+  }
   return (
     <div>
       <header>
@@ -117,7 +122,12 @@ function App() {
                     Senha:
                     {password.password}
                   </p>
-                  <button data-testid="remove-btn">Apagar senha</button>
+                  <button
+                    data-testid="remove-btn"
+                    onClick={ () => removePassword(index) }
+                  >
+                    Apagar senha
+                  </button>
                 </li>
               )
             ))}
