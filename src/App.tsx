@@ -117,6 +117,7 @@ function App() {
                     Senha:
                     {password.password}
                   </p>
+                  <button data-testid="remove-btn">Apagar senha</button>
                 </li>
               )
             ))}
