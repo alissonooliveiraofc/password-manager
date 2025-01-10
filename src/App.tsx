@@ -66,6 +66,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState(form);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [hidePasswords, setHidePasswords] = useState(false);
   const [error, setError] = useState({
     hasMinLength: false,
     hasMaxLength: true,
@@ -104,6 +105,16 @@ function App() {
 
       <section>
         <h2>Senhas cadastradas</h2>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              checked={ hidePasswords }
+              onChange={ (event) => setHidePasswords(event.target.checked) }
+            />
+            Esconder senhas
+          </label>
+        </div>
         {passwords.length === 0 ? (
           <p>Nenhuma senha cadastrada</p>
         ) : (
@@ -120,7 +131,7 @@ function App() {
                   </p>
                   <p>
                     Senha:
-                    {password.password}
+                    {hidePasswords ? '******' : password.password}
                   </p>
                   <button
                     data-testid="remove-btn"
