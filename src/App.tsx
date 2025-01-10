@@ -124,6 +124,7 @@ function App() {
                   checked={ hidePasswords }
                   onChange={ (event) => setHidePasswords(event.target.checked) }
                 />
+                {' '}
                 Esconder senhas
               </label>
             </div>
@@ -137,10 +138,12 @@ function App() {
                     </a>
                     <p>
                       Login:
+                      {' '}
                       {password.login}
                     </p>
                     <p>
                       Senha:
+                      {' '}
                       {hidePasswords ? '******' : password.password}
                     </p>
                     <button
