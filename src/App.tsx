@@ -106,7 +106,7 @@ function App() {
             {passwords.map((password, index) => (
               password.service && password.login && password.password && password.url && (
                 <li key={ index }>
-                  <a href={ password.url } target="_blank" rel="noopener noreferrer">
+                  <a href={ `http://${password.url}` } target="_blank" rel="noopener noreferrer">
                     {password.service}
                   </a>
                   <p>
