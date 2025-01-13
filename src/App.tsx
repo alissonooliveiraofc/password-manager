@@ -114,9 +114,13 @@ function App() {
 
           />
             : (
-              <button onClick={ () => setShowForm(true) }>
-                Cadastrar nova senha
-              </button>
+              <div>
+                <button onClick={ () => setShowForm(true) }>
+                  Cadastrar nova senha
+                </button>
+                <span className="linha" />
+              </div>
+
             )
         }
       </main>
@@ -125,7 +129,7 @@ function App() {
         <h2>Senhas cadastradas</h2>
         {passwords.length === 0 ? (
           <div>
-            <p>Nenhuma senha cadastrada</p>
+            <p className="locker-phrase">Nenhuma senha cadastrada</p>
             <img id="locker-icon" src="./src/assets/locker.svg" alt="" />
           </div>
         ) : (
