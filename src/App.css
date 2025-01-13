@@ -1,7 +1,21 @@
+h1 {
+margin-top: 40px;
+font-size: 45px;
+color: white;
+}
+
+button {
+  height: 55px;
+  border-radius: 30px;
+}
 .valid-password-check {
   color: #aeffb6;
 }
 
 .invalid-password-check {
   color: #f58989;
+}
+
+.asterisco {
+  color: #3187E7;
 }

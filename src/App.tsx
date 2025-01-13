@@ -90,7 +90,17 @@ function App() {
   return (
     <div>
       <header>
-        <h1>Gerenciador de senhas</h1>
+        <h1>
+          Gerenciador
+          {' '}
+          <span className="asterisco">*</span>
+          {' '}
+          de
+          {' '}
+          <span className="asterisco">*</span>
+          {' '}
+          senhas
+        </h1>
       </header>
 
       <main>
@@ -114,7 +124,10 @@ function App() {
       <section>
         <h2>Senhas cadastradas</h2>
         {passwords.length === 0 ? (
-          <p>Nenhuma senha cadastrada</p>
+          <div>
+            <p>Nenhuma senha cadastrada</p>
+            <img id="locker-icon" src="./src/assets/locker.svg" alt="" />
+          </div>
         ) : (
           <>
             <div>
