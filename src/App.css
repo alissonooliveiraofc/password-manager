@@ -130,6 +130,8 @@ margin-top: 15px;
 
 .cards {
   background-color: #323544;
+  border-radius: 10px;
+  font-size: 17px;
 }
 
 .checkbox {
@@ -144,4 +146,23 @@ margin-top: 15px;
   gap: 10px;
   box-sizing: border-box;
   font-size: 15px;
+}
+
+.passwords-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 55%;
+  padding: 0;
+  justify-content: center;
+  margin: auto;
+  gap: 30px;
+}
+
+.passwords-list li {
+  padding: 20px;
+}
+
+.card-text {
+  color: #8D8D8D;
 }

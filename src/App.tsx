@@ -146,7 +146,7 @@ function App() {
                 Esconder senhas
               </label>
             </div>
-            <ul>
+            <ul className="passwords-list">
               {passwords.map((password, index) => (
                 password.service
                 && password.login && password.password && password.url && (
@@ -155,12 +155,12 @@ function App() {
                       {password.service}
                     </a>
                     <p>
-                      Login:
+                      <span className="card-text">Login:</span>
                       {' '}
                       {password.login}
                     </p>
                     <p>
-                      Senha:
+                      <span className="card-text">Senha:</span>
                       {' '}
                       {hidePasswords ? '******' : password.password}
                     </p>
