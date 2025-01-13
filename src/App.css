@@ -20,6 +20,47 @@ button:hover {
   border: 1px solid white;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+form {
+  color: #8D8D8D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: flex-start;
+  text-align: center;
+  background-color: #1E2029;
+  padding-inline: 50px;
+  width: 700px;
+  height: 350px;
+  gap: 7px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+input {
+  font-size: 17px;
+  background-color: #3B3F50;
+  color: white;
+  border: 1px solid #3B3F50;
+  border-radius: 5px;
+  padding: 15px;
+  height: 53px;
+  width: 60%;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+label {
+  font-size: 12px;
+}
+
 .linha {
   margin: auto;
   margin-top: 40px;
@@ -46,4 +87,27 @@ button:hover {
 
 #locker-icon {
   width: 30px;
+}
+
+.password-check {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-70px);
+  transform: translateX(-270px);
+  background-color: #2A2D3E;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  width: 60%;
+  gap: 15px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  width: 37%;
 }

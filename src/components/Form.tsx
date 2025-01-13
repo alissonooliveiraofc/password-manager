@@ -31,25 +31,29 @@ function Form({
         id="service"
         onChange={ (event) => handleChange(event) }
       />
+      <div className="labels">
+        <label htmlFor="login">Login</label>
+        <label id="senha-text" htmlFor="password">Senha</label>
+      </div>
+      <div className="form-row">
+        <input
+          required
+          type="text"
+          name="login"
+          id="login"
+          onChange={ (event) => handleChange(event) }
+        />
 
-      <label htmlFor="login">Login</label>
-      <input
-        required
-        type="text"
-        name="login"
-        id="login"
-        onChange={ (event) => handleChange(event) }
-      />
+        <input
+          required
+          type="password"
+          name="password"
+          id="password"
+          onChange={ (event) => handleChange(event) }
+        />
+      </div>
 
-      <label htmlFor="password">Senha</label>
-      <input
-        required
-        type="password"
-        name="password"
-        id="password"
-        onChange={ (event) => handleChange(event) }
-      />
-      <ul>
+      <ul className="password-check">
         <li
           className={ error.hasMinLength
             ? VALID_PASSWORD_CHECK
@@ -87,18 +91,21 @@ function Form({
         onChange={ (event) => handleChange(event) }
       />
 
-      <button
-        id="submit"
-        disabled={ !isButtonEnabled }
-        type="submit"
-        onClick={ (event) => {
-          event.preventDefault();
-          handleRegister(event);
-        } }
-      >
-        Cadastrar
-      </button>
-      <button onClick={ () => setShowForm(false) }>Cancelar</button>
+      <div className="button-grade">
+        <button
+          id="submit"
+          disabled={ !isButtonEnabled }
+          type="submit"
+          onClick={ (event) => {
+            event.preventDefault();
+            handleRegister(event);
+          } }
+        >
+          Cadastrar
+        </button>
+        <button onClick={ () => setShowForm(false) }>Cancelar</button>
+      </div>
+
     </form>
   );
 }
