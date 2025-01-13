@@ -61,6 +61,22 @@ label {
   font-size: 12px;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3590F5;
+}
+
+a:hover {
+  color: #1E2029;
+  background-color: #3590F5;
+  border-radius: 5px;
+  padding: 2px 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  
+}
+
 .linha {
   margin: auto;
   margin-top: 40px;
@@ -132,6 +148,9 @@ margin-top: 15px;
   background-color: #323544;
   border-radius: 10px;
   font-size: 17px;
+  min-width: 289px;
+  min-height:143px;
+  
 }
 
 .checkbox {
@@ -152,7 +171,7 @@ margin-top: 15px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  width: 55%;
+  width: 100%;
   padding: 0;
   justify-content: center;
   margin: auto;
