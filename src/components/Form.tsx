@@ -103,7 +103,7 @@ function Form({
         >
           Cadastrar
         </button>
-        <button onClick={ () => setShowForm(false) }>Cancelar</button>
+        <button className="cancel" onClick={ () => setShowForm(false) }>Cancelar</button>
       </div>
 
     </form>

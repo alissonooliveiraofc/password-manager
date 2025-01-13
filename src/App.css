@@ -41,16 +41,16 @@ form {
   height: 350px;
   gap: 7px;
   box-sizing: border-box;
-  margin-top: 30px;
+  /* margin-top:10px; */
 }
 
 input {
-  font-size: 17px;
+  font-size: 15px;
   background-color: #3B3F50;
   color: white;
   border: 1px solid #3B3F50;
   border-radius: 5px;
-  padding: 15px;
+  padding: 11px;
   height: 53px;
   width: 60%;
   box-sizing: border-box;
@@ -90,14 +90,19 @@ label {
 }
 
 .password-check {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-70px);
+  right: 60px;
+  top: 33%;
+  transform: translateY(-100px);
   transform: translateX(-270px);
   background-color: #2A2D3E;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-size: 14px;
 }
 
 .form-row {
@@ -110,4 +115,33 @@ label {
   display: flex;
   justify-content: space-between;
   width: 37%;
+}
+
+.button-grade {
+display: flex;
+justify-content: space-between;
+width: 47%;
+margin-top: 15px;
+}
+
+.cancel {
+  background-color: rgba(255, 0, 0, 0.753);
+}
+
+.cards {
+  background-color: #323544;
+}
+
+.checkbox {
+  width: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
 }

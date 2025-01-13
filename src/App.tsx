@@ -135,8 +135,9 @@ function App() {
         ) : (
           <>
             <div>
-              <label>
+              <label className="checkbox-container">
                 <input
+                  className="checkbox"
                   type="checkbox"
                   checked={ hidePasswords }
                   onChange={ (event) => setHidePasswords(event.target.checked) }
@@ -149,7 +150,7 @@ function App() {
               {passwords.map((password, index) => (
                 password.service
                 && password.login && password.password && password.url && (
-                  <li key={ index }>
+                  <li className="cards" key={ index }>
                     <a href={ `http://${password.url}` } target="_blank" rel="noopener noreferrer">
                       {password.service}
                     </a>
