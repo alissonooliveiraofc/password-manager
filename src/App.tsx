@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import Form from './components/Form';
 import './App.css';
@@ -32,7 +32,11 @@ function App() {
   };
 
   const handleRegister = () => {
-    setPasswords([...passwords, formData]);
+    const updatedPasswords = [...passwords, formData];
+    setPasswords(updatedPasswords);
+
+    // Salvar no localStorage
+    localStorage.setItem('passwords', JSON.stringify(updatedPasswords));
 
     setFormData({ service: '', login: '', password: '', url: '' });
 
@@ -83,10 +87,21 @@ function App() {
 
   const [passwords, setPasswords] = useState<typeof form[]>([]);
 
+  useEffect(() => {
+    const storedPasswords = localStorage.getItem('passwords');
+    if (storedPasswords) {
+      setPasswords(JSON.parse(storedPasswords));
+    }
+  }, []);
+
   function removePassword(index: number) {
     const newPasswords = passwords.filter((_, i) => i !== index);
     setPasswords(newPasswords);
+
+    // Atualizar o localStorage
+    localStorage.setItem('passwords', JSON.stringify(newPasswords));
   }
+
   return (
     <div>
       <header>
