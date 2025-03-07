@@ -1,7 +1,6 @@
 type FormProps = {
   setShowForm: (boolean : boolean) => void;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  isButtonEnabled: boolean;
   error: {
     hasMinLength: boolean,
     hasMaxLength: boolean,
@@ -17,7 +16,6 @@ const INVALID_PASSWORD_CHECK = 'invalid-password-check';
 function Form({
   setShowForm,
   handleChange,
-  isButtonEnabled,
   error,
   handleRegister,
 }: FormProps) {
@@ -29,6 +27,7 @@ function Form({
         type="text"
         name="service"
         id="service"
+        autoComplete="off"
         onChange={ (event) => handleChange(event) }
       />
       <div className="labels">
@@ -41,6 +40,7 @@ function Form({
           type="text"
           name="login"
           id="login"
+          autoComplete="off"
           onChange={ (event) => handleChange(event) }
         />
 
@@ -49,6 +49,7 @@ function Form({
           type="password"
           name="password"
           id="password"
+          autoComplete="new-password"
           onChange={ (event) => handleChange(event) }
         />
       </div>
@@ -88,6 +89,7 @@ function Form({
         type="text"
         name="url"
         id="url"
+        autoComplete="off"
         onChange={ (event) => handleChange(event) }
       />
 
