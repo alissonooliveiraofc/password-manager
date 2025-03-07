@@ -57,8 +57,21 @@ input {
   font-weight: bold;
 }
 
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 label {
   font-size: 12px;
+  cursor: pointer;
 }
 
 a {
