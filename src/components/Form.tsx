@@ -94,7 +94,6 @@ function Form({
       <div className="button-grade">
         <button
           id="submit"
-          disabled={ !isButtonEnabled }
           type="submit"
           onClick={ (event) => {
             event.preventDefault();
