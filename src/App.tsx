@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import copy from 'clipboard-copy';
 import Form from './components/Form';
 import './App.css';
 
@@ -152,11 +153,24 @@ function App() {
                       type="checkbox"
                       checked={ passwordVisibility[index] }
                       onChange={ () => togglePasswordVisibility(index) }
-
                     />
                     {' '}
                     Mostrar senha
                   </label>
+                  <button
+                    className="copy-btn"
+                    onClick={ () => {
+                      copy(password.password);
+                      Swal.fire({
+                        icon: 'success',
+                        title: 'Senha copiada!',
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
+                    } }
+                  >
+                    <img className="copy-icon" src="/public/copy.png" alt="Copy Icon" />
+                  </button>
                   <button
                     data-testid="remove-btn"
                     onClick={ () => removePassword(index) }

@@ -252,3 +252,22 @@ gap: 8px;
     width: 90%;
   }
 }
+
+.copy-icon{
+  width: 18px;
+  height: 18px;
+}
+
+.copy-btn {
+  background-color: #3590F5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px;
+  /* width: 20px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* gap: 5px; */
+}
