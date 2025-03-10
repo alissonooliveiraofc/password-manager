@@ -169,7 +169,7 @@ function App() {
                       });
                     } }
                   >
-                    <img className="copy-icon" src="/public/copy.png" alt="Copy Icon" />
+                    <img className="copy-icon" src="/images/copy.png" alt="Copy Icon" />
                   </button>
                   <button
                     data-testid="remove-btn"
