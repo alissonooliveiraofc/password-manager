@@ -8,7 +8,7 @@ Com o **Password Manager**, você pode armazenar todas as suas senhas em um só 
 
 ## Veja o projeto pronto! 🌐
 
-- Para ver o projeto [clique aqui](https://passwordmanager.vercel.app/).
+- Para ver o projeto [clique aqui](https://gerenciasenhas.vercel.app/).
 
 ## 🛠️ Tecnologias Utilizadas
 
