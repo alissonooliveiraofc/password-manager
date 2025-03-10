@@ -30,18 +30,28 @@ main {
 form {
   color: #8D8D8D;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
   justify-content: center;
   border-radius: 10px;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
   background-color: #1E2029;
   padding-inline: 40px;
-  width: 70%;
+  width: 90%;
   height: 350px;
-  gap: 7px;
+  /* gap: 7px; */
   box-sizing: border-box;
   /* margin-top:10px; */
+}
+
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
 }
 
 input {
@@ -52,9 +62,10 @@ input {
   border-radius: 5px;
   padding: 11px;
   height: 53px;
-  width: 70%;
+  width: 90%;
   box-sizing: border-box;
   font-weight: bold;
+  text-align: center;
 }
 
 input[type='checkbox'] {
@@ -118,25 +129,30 @@ a:hover {
   width: 30px;
 }
 
+#login{
+  width: 100%;
+}
+
+#password {
+  width: 100%;
+}
+
 .password-check {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  position: absolute;
-  right: 60px;
-  top: 33%;
-  transform: translateY(-100px);
-  transform: translateX(-270px);
+  align-items: center;
+  text-align: center;
   background-color: #2A2D3E;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 40px;
   font-size: 14px;
+  gap: 5px;
 }
 
 .form-row {
   display: flex;
-  width: 60%;
+  width: 90%;
   gap: 15px;
 }
 
@@ -148,9 +164,11 @@ a:hover {
 
 .button-grade {
 display: flex;
-justify-content: space-between;
-width: 47%;
+flex-flow: row;
+justify-content: center;
+width: 65%;
 margin-top: 15px;
+gap: 8px;
 }
 
 .cancel {
@@ -197,4 +215,12 @@ margin-top: 15px;
 
 .card-text {
   color: #8D8D8D;
+}
+
+.password-check li{
+  list-style: circle;
+}
+
+#titulo-senha {
+  margin-top: -20px;
 }

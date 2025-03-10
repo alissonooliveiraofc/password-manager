@@ -21,40 +21,71 @@ function Form({
 }: FormProps) {
   return (
     <form>
-      <label htmlFor="service">Nome do serviço</label>
-      <input
-        required
-        type="text"
-        name="service"
-        id="service"
-        autoComplete="off"
-        onChange={ (event) => handleChange(event) }
-      />
-      <div className="labels">
-        <label htmlFor="login">Login</label>
-        <label id="senha-text" htmlFor="password">Senha</label>
-      </div>
-      <div className="form-row">
+      <div className="container-1">
+        <label htmlFor="service">Nome do serviço</label>
         <input
           required
           type="text"
-          name="login"
-          id="login"
+          name="service"
+          id="service"
+          autoComplete="off"
+          onChange={ (event) => handleChange(event) }
+        />
+        <div className="labels">
+          <label htmlFor="login">Login</label>
+          <label id="senha-text" htmlFor="password">Senha</label>
+        </div>
+        <div className="form-row">
+          <input
+            required
+            type="text"
+            name="login"
+            id="login"
+            autoComplete="off"
+            onChange={ (event) => handleChange(event) }
+          />
+
+          <input
+            required
+            type="password"
+            name="password"
+            id="password"
+            autoComplete="new-password"
+            onChange={ (event) => handleChange(event) }
+          />
+        </div>
+
+        <label htmlFor="url">URL</label>
+        <input
+          type="text"
+          name="url"
+          id="url"
           autoComplete="off"
           onChange={ (event) => handleChange(event) }
         />
 
-        <input
-          required
-          type="password"
-          name="password"
-          id="password"
-          autoComplete="new-password"
-          onChange={ (event) => handleChange(event) }
-        />
+        <div className="button-grade">
+          <button
+            id="submit"
+            type="submit"
+            onClick={ (event) => {
+              event.preventDefault();
+              handleRegister(event);
+            } }
+          >
+            Cadastrar
+          </button>
+          <button
+            className="cancel"
+            onClick={ () => setShowForm(false) }
+          >
+            Cancelar
+          </button>
+        </div>
       </div>
-
       <ul className="password-check">
+        <h4 id="titulo-senha">Recomendação de Senha</h4>
+
         <li
           className={ error.hasMinLength
             ? VALID_PASSWORD_CHECK
@@ -84,28 +115,6 @@ function Form({
           Possuir algum caractere especial
         </li>
       </ul>
-      <label htmlFor="url">URL</label>
-      <input
-        type="text"
-        name="url"
-        id="url"
-        autoComplete="off"
-        onChange={ (event) => handleChange(event) }
-      />
-
-      <div className="button-grade">
-        <button
-          id="submit"
-          type="submit"
-          onClick={ (event) => {
-            event.preventDefault();
-            handleRegister(event);
-          } }
-        >
-          Cadastrar
-        </button>
-        <button className="cancel" onClick={ () => setShowForm(false) }>Cancelar</button>
-      </div>
 
     </form>
   );
