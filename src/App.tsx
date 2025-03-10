@@ -173,7 +173,22 @@ function App() {
                   </button>
                   <button
                     data-testid="remove-btn"
-                    onClick={ () => removePassword(index) }
+                    onClick={ () => {
+                      Swal.fire({
+                        title: 'Tem certeza que deseja apagar essa senha?',
+                        showDenyButton: false,
+                        showCancelButton: true,
+                        confirmButtonText: 'Apagar',
+                        denyButtonText: 'Manter Senha',
+                        cancelButtonText: 'Cancelar',
+                      }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                          Swal.fire('Senha Apagada!', '', 'success');
+                          removePassword(index);
+                        }
+                      });
+                    } }
                   >
                     Apagar senha
                   </button>
