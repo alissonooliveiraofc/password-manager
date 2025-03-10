@@ -11,6 +11,8 @@ type FormProps = {
 };
 
 const VALID_PASSWORD_CHECK = 'valid-password-check';
+
+const MAX_CHAR_LIMIT = 50;
 const INVALID_PASSWORD_CHECK = 'invalid-password-check';
 
 function Form({
@@ -30,6 +32,7 @@ function Form({
           id="service"
           autoComplete="off"
           onChange={ (event) => handleChange(event) }
+          maxLength={ MAX_CHAR_LIMIT }
         />
         <div className="labels">
           <label htmlFor="login">Login</label>
@@ -43,6 +46,8 @@ function Form({
             id="login"
             autoComplete="off"
             onChange={ (event) => handleChange(event) }
+            maxLength={ MAX_CHAR_LIMIT }
+
           />
 
           <input
@@ -52,6 +57,8 @@ function Form({
             id="password"
             autoComplete="new-password"
             onChange={ (event) => handleChange(event) }
+            maxLength={ MAX_CHAR_LIMIT }
+
           />
         </div>
 
@@ -61,7 +68,11 @@ function Form({
           name="url"
           id="url"
           autoComplete="off"
-          onChange={ (event) => handleChange(event) }
+          onChange={ (event) => {
+            event.target.value = event.target.value.toLowerCase();
+            handleChange(event);
+          } }
+          maxLength={ MAX_CHAR_LIMIT }
         />
 
         <div className="button-grade">
