@@ -216,7 +216,9 @@ gap: 8px;
 .card-text {
   color: #8D8D8D;
 }
-
+form {
+  width: 95%;
+}
 .password-check li{
   list-style: circle;
 }
