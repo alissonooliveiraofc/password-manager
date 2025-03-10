@@ -224,3 +224,13 @@ gap: 8px;
 #titulo-senha {
   margin-top: -20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .password-check {
+    display: none;
+  }
+
+  .titulo-app {
+    font-size: 27px;
+  }
+}

@@ -87,7 +87,7 @@ function App() {
   return (
     <div>
       <header>
-        <h1>
+        <h1 className="titulo-app">
           Gerenciador
           {' '}
           <span className="asterisco">*</span>
