@@ -38,7 +38,7 @@ form {
   text-align: center;
   background-color: #1E2029;
   padding-inline: 40px;
-  width: 90%;
+  width: 60%;
   height: 350px;
   /* gap: 7px; */
   box-sizing: border-box;
@@ -232,5 +232,23 @@ gap: 8px;
 
   .titulo-app {
     font-size: 27px;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 785px) {
+  .password-check {
+    display: none;
+  }
+
+  .titulo-app {
+    font-size: 27px;
+  }
+
+  form {
+    width: 90%;
   }
 }
