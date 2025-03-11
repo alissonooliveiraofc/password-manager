@@ -133,9 +133,9 @@ function App() {
           <ul className="passwords-list">
             {passwords.map((password, index) => (
               password.service
-              && password.login && password.password && password.url && (
+              && password.login && password.password && (
                 <li className="cards" key={ index }>
-                  <a href={ `http://${password.url}` } target="_blank" rel="noopener noreferrer">
+                  <a href={ password.url ? `http://${password.url}` : '#' } target="_blank" rel="noopener noreferrer">
                     {password.service}
                   </a>
                   <p>
