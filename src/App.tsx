@@ -32,6 +32,17 @@ function App() {
   };
 
   const handleRegister = () => {
+    const { service, login, password } = formData;
+
+    if (!service || !login || !password) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Por favor, preencha todos os campos obrigatórios.',
+      });
+      return;
+    }
+
     const updatedPasswords = [...passwords, formData];
     setPasswords(updatedPasswords);
 
